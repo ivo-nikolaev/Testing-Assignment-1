@@ -2,7 +2,7 @@
 // Include/ Exclude internet
 exports.__esModule = true;
 exports.includeInternet = function (internetConnection, price, totalPrice) {
-    if (internetConnection) {
+    if (!internetConnection) {
         return totalPrice + price;
     }
     else {
@@ -11,7 +11,7 @@ exports.includeInternet = function (internetConnection, price, totalPrice) {
 };
 // Exclude internet connection
 exports.excludeInternet = function (internetConnection, price, totalPrice) {
-    if (!internetConnection) {
+    if (internetConnection) {
         //pass obj
         return totalPrice - price;
     }
@@ -31,7 +31,6 @@ exports.selectPhone = function (listOfPhones, model, price, totalPrice) {
     return totalPrice + price;
 };
 exports.unselectPhone = function (listOfPhones, model, price, totalPrice) {
-    // eslint-disable-next-line no-var
     var toRemove = listOfPhones.indexOf(model);
     if (toRemove > -1) {
         listOfPhones.splice(toRemove, 1);

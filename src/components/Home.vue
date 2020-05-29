@@ -123,13 +123,13 @@ export default {
     checkInternet() {
       if (this.internet) {
         this.totalPrice = methods.includeInternet(
-          this.internet,
+          !this.internet,
           200,
           this.totalPrice
         );
       } else {
         this.totalPrice = methods.excludeInternet(
-          this.internet,
+          !this.internet,
           200,
           this.totalPrice
         );

@@ -1,7 +1,7 @@
 // Include/ Exclude internet
 
 export const includeInternet = (internetConnection: boolean, price: number, totalPrice: number) => {
-    if (internetConnection) {
+    if (!internetConnection) {
         return totalPrice + price;
     }
     else {
@@ -12,7 +12,7 @@ export const includeInternet = (internetConnection: boolean, price: number, tota
 // Exclude internet connection
 
 export const excludeInternet = (internetConnection: boolean, price: number, totalPrice: number) => {
-    if (!internetConnection) {
+    if (internetConnection) {
         //pass obj
         return totalPrice - price;
     } else {
